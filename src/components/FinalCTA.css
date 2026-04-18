@@ -1,0 +1,54 @@
+/* SECTION */
+.final-cta {
+	padding: 80px 20px;
+	background: #1a99aa;
+	color: white;
+	text-align: center;
+}
+
+/* CONTENIDO */
+.final-content {
+	max-width: 400px;
+	margin: auto;
+}
+
+/* TEXTO PRINCIPAL */
+.final-text {
+	font-size: 1.4rem;
+	font-weight: 600;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+/* SUB */
+.final-sub {
+	font-size: 0.95rem;
+	opacity: 0.9;
+	margin-bottom: 30px;
+}
+
+/* BOTÓN */
+.final-btn {
+	background: #f7aa20;
+	border: none;
+	padding: 14px 26px;
+	border-radius: 30px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.final-btn:active {
+	transform: scale(0.95);
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+	.final-text {
+		font-size: 2rem;
+	}
+
+	.final-sub {
+		font-size: 1.1rem;
+	}
+}

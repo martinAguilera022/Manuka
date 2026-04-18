@@ -1,0 +1,167 @@
+.how {
+	padding: 40px 10px;
+	text-align: center;
+}
+
+/* SECTION */
+.how-section {
+	position: relative;
+	background-image: url("/img/texturaPapel.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	padding: 50px 20px;
+}
+
+.how-section::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(112, 170, 99, 0.66);
+	z-index: 1;
+}
+
+.how-section > * {
+	position: relative;
+	z-index: 2;
+}
+
+/* TITLE */
+.hero-title {
+	font-size: 1.8rem;
+	font-weight: 800;
+	text-align: center;
+	line-height: 1.2;
+	color: #111;
+
+	max-width: 320px;
+	margin: 0 auto 20px;
+}
+
+/* DECOR */
+.dots {
+	position: relative;
+}
+
+.dots::before {
+	content: "• • •";
+	position: absolute;
+	top: -15px;
+	left: 20%;
+	color: #f7aa20;
+	font-size: 12px;
+}
+
+/* 👉 NUEVO: WRAPPER para carrusel */
+.how-wrapper {
+	overflow: hidden;
+}
+
+/* CARRUSEL */
+.how-steps {
+	display: flex;
+	gap: 30px;
+	width: max-content; /* 👈 clave para animación */
+	padding: 10px 10px 20px;
+}
+
+/* STEP */
+.how-step {
+	min-width: 160px; /* 👈 FIX importante */
+	max-width: 180px;
+	flex-shrink: 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	transition: transform 0.3s ease;
+}
+
+/* hover sutil */
+.how-step:hover {
+	transform: translateY(-6px);
+}
+
+/* NUMBER */
+.step-number {
+	background: #f7aa20;
+	color: white;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	font-size: 0.75rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: 8px;
+}
+
+/* ICON */
+.how-icon {
+	font-size: 28px;
+
+	background: white;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: 10px;
+}
+
+/* TEXT */
+.how-step h3 {
+	font-size: 1rem;
+}
+
+.how-step p {
+	font-size: 0.85rem;
+	color: #555;
+	max-width: 200px;
+}
+
+/* SCROLLBAR OFF */
+.how-steps::-webkit-scrollbar {
+	display: none;
+}
+
+/* COLORS */
+.step1 {
+	color: #f7aa20;
+}
+.step2 {
+	color: #ec5a40;
+}
+.step3 {
+	color: #1a99aa;
+}
+.step4 {
+	color: #f18d8d;
+}
+
+.fondo-step1 {
+	background: #f7ac2036;
+}
+.fondo-step2 {
+	background: #ec5a402d;
+}
+.fondo-step3 {
+	background: #1a99aa2e;
+}
+.fondo-step4 {
+	background: #f18d8d25;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+	.how-step {
+		min-width: 180px;
+	}
+}

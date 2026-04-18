@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+:root {
+	--primary: #1a99aa;
+	--accent: #f7aa20;
+	--secondary: #c5b35d;
+	--error: #ec5a41;
+	--bg: #efe2cf;
+	--fun: #f18d8d;
+}
+html,
+body {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: "interstate", sans-serif;
+	background-color: #efe2cf;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+section {
+	padding: 60px 20px;
+}
+.divider {
+	border: none;
+	height: 10px;
+	margin: 40px 0;
+	background: linear-gradient(to right, transparent, #ccc, transparent);
+}
+.divider-color {
+	display: flex;
+	height: 6px;
+	
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.divider-color span {
+	flex: 1;
+}

@@ -1,0 +1,62 @@
+.age {
+	padding: 20px 6px;
+	background: #efe2cf;
+}
+
+/* GRID */
+.age-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* CARD */
+.age-card {
+	position: relative;
+	height: 180px;
+	border-radius: 20px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+}
+
+/* OVERLAY */
+.age-overlay {
+	position: absolute;
+	inset: 0;
+	opacity: 0.6;
+}
+
+/* CONTENIDO */
+.age-content {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+
+	background: rgba(255, 255, 255, 0.78);
+	padding: 15px;
+	border-radius: 15px;
+}
+
+/* TEXTOS */
+.age-range {
+	font-size: 0.8rem;
+	color: #555;
+}
+
+.age-content h3 {
+	color: #1a99aa;
+	margin: 5px 0;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+	.age-grid {
+		flex-direction: row;
+	}
+
+	.age-card {
+		flex: 1;
+		height: 220px;
+	}
+}

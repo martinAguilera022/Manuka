@@ -1,0 +1,164 @@
+/* VARIABLES */
+:root {
+	--primary: #1a99aa;
+	--accent: #f7aa20;
+	--bg: #efe2cf;
+}
+
+/* NAVBAR BASE (mobile) */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 14px 18px;
+
+	background: linear-gradient(135deg, var(--primary), #178a99);
+	color: white;
+
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* LOGO */
+.logo-svg {
+	fill: white;
+	height: 20px;
+	width: auto;
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* HAMBURGER */
+.hamburger {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.hamburger span {
+	width: 24px;
+	height: 3px;
+	background: white;
+	border-radius: 2px;
+	transition: 0.3s;
+}
+
+/* animación */
+.hamburger.active span:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+	transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MENU MOBILE */
+.menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 18px;
+
+	padding: 20px;
+
+	background: linear-gradient(135deg, var(--primary), #178a99);
+
+	transform: translateY(-160%);
+	transition: transform 0.3s ease;
+	margin: 0;
+}
+
+.menu.open {
+	transform: translateY(0);
+}
+
+.menu a {
+	color: white;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+/* CTA */
+.cta-btn {
+	background: var(--accent);
+	border: none;
+	padding: 12px 22px;
+	border-radius: 25px;
+	font-weight: 600;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.cta-btn:active {
+	transform: scale(0.96);
+}
+
+/* ---------------------- */
+/* 💻 DESKTOP (enhancement) */
+/* ---------------------- */
+@media (min-width: 768px) {
+	.navbar {
+		padding: 16px 40px;
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.menu {
+		position: static;
+		transform: none;
+		flex-direction: row;
+		gap: 25px;
+		background: transparent;
+		padding: 0;
+		width: auto;
+	}
+
+	.menu a {
+		position: relative;
+	}
+
+	.menu a::after {
+		content: "";
+		position: absolute;
+		width: 0%;
+		height: 2px;
+		bottom: -4px;
+		left: 0;
+		background-color: var(--accent);
+		transition: width 0.3s ease;
+	}
+
+	.menu a:hover::after {
+		width: 100%;
+	}
+
+	.cta-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 15px rgba(247, 170, 32, 0.4);
+	}
+}

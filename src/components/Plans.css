@@ -1,0 +1,100 @@
+/* SECTION */
+.plans {
+	padding: 70px 16px;
+	text-align: center;
+	background: #f0f9ff;
+}
+
+.plans-title {
+	font-size: 1.8rem;
+	margin-bottom: 30px;
+	color: #1a99aa;
+}
+
+/* MOBILE FIRST */
+.plans-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 18px;
+}
+
+/* CARD */
+.plan-card {
+	width: 100%;
+	max-width: 300px;
+	background: white;
+	padding: 25px 20px;
+	border-radius: 25px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+	transition: transform 0.2s ease;
+}
+
+/* EMOJI */
+.emoji {
+	font-size: 42px;
+	margin-bottom: 10px;
+}
+
+/* TEXT */
+.plan-card h3 {
+	margin-bottom: 8px;
+	color: #1a99aa;
+	font-size: 1.2rem;
+}
+
+.plan-desc {
+	font-size: 0.9rem;
+	color: #555;
+	margin-bottom: 15px;
+}
+
+/* BUTTON */
+.plan-btn {
+	background: #f7aa20;
+	border: none;
+	padding: 12px 20px;
+	border-radius: 25px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.15s ease;
+}
+
+.plan-btn:active {
+	transform: scale(0.96);
+}
+/* lista */
+.includes-plans {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 20px;
+	text-align: left;
+}
+
+.includes-plans li {
+	font-size: 0.9rem;
+	margin-bottom: 5px;
+	color: #444;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+	.plans-title {
+		font-size: 2.3rem;
+		margin-bottom: 50px;
+	}
+
+	.plans-container {
+		flex-direction: row;
+		justify-content: center;
+		gap: 25px;
+	}
+
+	.plan-card {
+		width: 240px;
+	}
+
+	.plan-card:hover {
+		transform: translateY(-8px) scale(1.05);
+	}
+}

@@ -1,0 +1,91 @@
+.quienes {
+	padding: 50px 20px;
+	text-align: center;
+	position: relative;
+}
+
+/* ⭐ rating */
+.rating {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 18px;
+}
+
+.rating img {
+	width: 20px;
+}
+
+.rating span {
+	font-size: 0.85rem;
+	color: #666;
+}
+
+/* 🧠 título */
+.quienes h2 {
+	font-size: 1.8rem;
+	line-height: 1.25;
+	font-weight: 700;
+	margin-bottom: 14px;
+}
+
+/* texto */
+.subtitle {
+	font-size: 0.95rem;
+	color: #6a6767;
+	margin-bottom: 24px;
+	font-weight: 600;
+}
+
+/* botón */
+.cta {
+	background: #2f3dbd;
+	color: white;
+	border: none;
+	padding: 14px 24px;
+	border-radius: 12px;
+	font-weight: 600;
+}
+
+/* contenido arriba */
+.quienes h2,
+.quienes .subtitle,
+.quienes .rating,
+.quienes .cta {
+	position: relative;
+	z-index: 2;
+}
+
+/* 🎭 PERSONAJE */
+.personaje {
+	position: absolute;
+	bottom: 0;
+	right: -20px;
+	width: 180px;
+
+	z-index: 0;
+
+	/* 👇 sobresale sin romper layout */
+	transform: translateY(40px) rotate(-10deg);
+
+	animation: saludo 10s ease-in-out infinite;
+}
+
+/* 👋 animación */
+@keyframes saludo {
+	0%,
+	60%,
+	100% {
+		transform: translateY(40px) rotate(-10deg);
+	}
+	70% {
+		transform: translateY(40px) rotate(-3deg);
+	}
+	80% {
+		transform: translateY(40px) rotate(-12deg);
+	}
+	90% {
+		transform: translateY(40px) rotate(-4deg);
+	}
+}

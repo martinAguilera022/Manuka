@@ -1,0 +1,64 @@
+.manuka-highlight {
+	padding: 100px 20px;
+	background: #f9f7f4;
+	text-align: center;
+}
+
+/* TITULO */
+.manuka-highlight h2 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+/* SUBTITULO */
+.manuka-highlight .subtitle {
+	color: #666;
+	margin-bottom: 60px;
+	font-size: 1.1rem;
+}
+
+/* GRID */
+.highlight-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 30px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* CARD */
+.card {
+	background: white;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+	transition: all 0.3s ease;
+	text-align: left;
+}
+
+/* HOVER EFECTO PRO */
+.card:hover {
+	transform: translateY(-10px) scale(1.02);
+	box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* IMAGEN */
+.card img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+}
+
+/* TEXTO */
+.card h3 {
+	font-size: 1.3rem;
+	margin: 20px 20px 10px;
+}
+
+.card p {
+	font-size: 0.95rem;
+	color: #555;
+	margin: 0 20px 25px;
+	line-height: 1.5;
+}
