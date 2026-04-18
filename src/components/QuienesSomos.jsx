@@ -12,16 +12,18 @@ function QuienesSomos() {
       />
 
       <div className="rating">
-        {[...Array(5)].map((_, i) => (
-          <img key={i} src={star} alt="star" />
-        ))}
-        <span>4.9/5 +21K familias satisfechas</span>
-      </div>
+  <div className="stars">
+    {[...Array(5)].map((_, i) => (
+      <img key={i} src={star} alt="star" />
+    ))}
+  </div>
 
+  <span>4.9/5 +21K familias satisfechas</span>
+</div>
       <h2>
-        Cria niños
+        Cria niños curiosos
         <br />
-        curiosos y capaces de crear
+         y capaces de crear
       </h2>
 
       <p className="subtitle">

@@ -1,9 +1,10 @@
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useMotionValue, animate } from "framer-motion";
+import { useEffect, useRef } from "react";
 import "./HowItWorks.css";
 
 function HowItWorks() {
-  const controls = useAnimation();
+  const x = useMotionValue(0);
+  const animationRef = useRef(null);
 
   const steps = [
     {
@@ -32,38 +33,43 @@ function HowItWorks() {
     },
   ];
 
-  const startAnimation = () => {
-    controls.start({
-      x: ["0%", "-50%"],
-      transition: {
-        repeat: Infinity,
-        duration: 18, // 👈 más suave
-        ease: "linear",
-      },
+  const start = () => {
+    stop(); // evita duplicar animaciones
+
+    animationRef.current = animate(x, -1000, {
+      duration: 20,
+      ease: "linear",
+      repeat: Infinity,
     });
   };
 
+  const stop = () => {
+    if (animationRef.current) {
+      animationRef.current.stop();
+    }
+  };
+
   useEffect(() => {
-    startAnimation();
+    start();
+    return () => stop();
   }, []);
 
   return (
     <section className="how-section">
       <div className="how">
         <h1 className="hero-title">
-          Jugando hoy para mañana  <br /> desarrollar su futuro
+          Jugando hoy para mañana <br /> desarrollar su futuro
         </h1>
 
         <div className="how-wrapper">
           <motion.div
             className="how-steps"
-            animate={controls}
-            onMouseEnter={() => controls.stop()} // ⏸ pausa en hover
-            onMouseLeave={startAnimation} // ▶️ reanuda
-            onTouchStart={() => controls.stop()} // 📱 pausa en mobile
-            onTouchEnd={startAnimation}
+            style={{ x }} // 👈 clave
+            onMouseEnter={stop}
+            onMouseLeave={start}
+            onTouchStart={stop}
+            onTouchEnd={start}
             drag="x"
-            dragConstraints={{ left: -300, right: 0 }} // 👈 evita que se vaya infinito al arrastrar
           >
             {[...steps, ...steps].map((step, i) => (
               <div className="how-step" key={i}>

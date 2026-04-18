@@ -13,10 +13,6 @@
 	margin-bottom: 18px;
 }
 
-.rating img {
-	width: 20px;
-}
-
 .rating span {
 	font-size: 0.85rem;
 	color: #666;
@@ -88,4 +84,19 @@
 	90% {
 		transform: translateY(40px) rotate(-4deg);
 	}
+}
+
+.rating {
+	display: flex;
+	flex-direction: column; /* 👈 clave */
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 18px;
+}
+.stars {
+	display: flex;
+	gap: 6px;
+}
+.rating img {
+	width: 25px;
 }

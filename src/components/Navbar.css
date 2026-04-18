@@ -17,9 +17,9 @@
 	justify-content: space-between;
 	align-items: center;
 
-	padding: 14px 18px;
+	padding: 25px 18px;
 
-	background: linear-gradient(135deg, var(--primary), #178a99);
+	background: linear-gradient(135deg, var(--accent));
 	color: white;
 
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -28,7 +28,7 @@
 /* LOGO */
 .logo-svg {
 	fill: white;
-	height: 20px;
+	height: 28px;
 	width: auto;
 
 	position: absolute;
