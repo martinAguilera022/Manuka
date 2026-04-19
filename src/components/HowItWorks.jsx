@@ -11,25 +11,25 @@ function HowItWorks() {
       clases: "step1",
       title: "Elegi una suscripción",
       desc: "Actividades pensadas para su etapa",
-      emoji: "👶",
+      icon: "/img/manuka.png",
     },
     {
       clases: "step2",
       title: "Llega su caja",
       desc: "Lista para abrir y empezar",
-      emoji: "📦",
+      icon: "/img/MOCKUP_CAJA_1_FRENTE.svg",
     },
     {
       clases: "step3",
       title: "Crea y experimenta",
       desc: "Explora, prueba y se divierte",
-      emoji: "🎨",
+      icon: "/img/portapintura.png",
     },
     {
       clases: "step4",
       title: "Guarda su logro",
       desc: "Suma su foto y ve su progreso",
-      emoji: "📸",
+      icon: "/img/camara.png",
     },
   ];
 
@@ -58,7 +58,7 @@ function HowItWorks() {
     <section className="how-section">
       <div className="how">
         <h1 className="hero-title">
-          Jugando hoy para mañana <br /> desarrollar su futuro
+          ASÍ EMPIEZA <br /> LA AVENTURA
         </h1>
 
         <div className="how-wrapper">
@@ -73,7 +73,9 @@ function HowItWorks() {
           >
             {[...steps, ...steps].map((step, i) => (
               <div className="how-step" key={i}>
-                <div className="how-icon">{step.emoji}</div>
+                <div className="how-icon">
+                  <img  src={step.icon} alt="step" />
+                </div>
 
                 <div
                   className={`step-number fondo-${step.clases} ${step.clases}`}

@@ -8,7 +8,8 @@ import Includes from "./components/Includes";
 import Album from "./components/Album";
 import Journey from "./components/ManukaHighlight";
 import QuienesSomos from "./components/QuienesSomos";
-
+import AgeBoxes from "./components/AgeBoxes";
+import WhatsInside from "./components/WhatsInside"; 
 function App() {
   return (
     <div>
@@ -23,7 +24,14 @@ function App() {
   <span style={{ background: "var(--fun)" }} />
 </div>
       <HowItWorks />
-      
+        <div className="divider-color">
+  <span style={{ background: "var(--primary)" }} />
+  <span style={{ background: "var(--accent)" }} />
+  <span style={{ background: "var(--secondary)" }} />
+  <span style={{ background: "var(--error)" }} />
+</div>
+      <AgeBoxes />
+      <WhatsInside />
       <Journey />
 
       <CTA />

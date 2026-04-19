@@ -1,52 +1,118 @@
 .age {
-	padding: 20px 6px;
-	background: #efe2cf;
+	padding: 60px 20px;
+	background-color: var(--fun);
+	color: white;
 }
 
-/* GRID */
+.age-title {
+	font-size: 1.8rem;
+	line-height: 1;
+	margin-bottom: 25px;
+	font-weight: 900;
+	text-align: center;
+}
+.age-subtitle {
+	line-height: 1;
+	margin-bottom: 25px;
+	color: var(--bg);
+	text-align: center;
+}
 .age-grid {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 25px;
 }
 
-/* CARD */
-.age-card {
-	position: relative;
-	height: 180px;
-	border-radius: 20px;
+.age-card-new {
+	border-radius: 24px;
 	overflow: hidden;
-	background-size: cover;
-	background-position: center;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s ease;
 }
 
-/* OVERLAY */
-.age-overlay {
-	position: absolute;
-	inset: 0;
-	opacity: 0.6;
+.age-card-new:hover {
+	transform: translateY(-5px);
 }
 
-/* CONTENIDO */
-.age-content {
-	position: absolute;
-	bottom: 15px;
-	left: 15px;
-
-	background: rgba(255, 255, 255, 0.78);
-	padding: 15px;
-	border-radius: 15px;
+/* 🎠 CARRUSEL */
+.age-img {
+	position: relative;
+	height: 220px;
+	overflow: hidden;
+	cursor: grab;
+	touch-action: pan-y;
 }
 
-/* TEXTOS */
-.age-range {
+.age-img:active {
+	cursor: grabbing;
+}
+
+.age-track {
+	display: flex;
+	height: 100%;
+	transition: transform 0.6s ease;
+}
+
+.age-track img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	flex-shrink: 0;
+	user-select: none;
+	pointer-events: none;
+}
+
+/* BODY */
+.age-body {
+	padding: 18px;
+	background-color: var(--accent);
+	display: flex;
+	flex-direction: column;
+}
+
+.age-tags {
 	font-size: 0.8rem;
-	color: #555;
+	color: #fff;
+	margin-bottom: 6px;
 }
 
-.age-content h3 {
-	color: #1a99aa;
-	margin: 5px 0;
+.age-body h3 {
+	font-size: 1.3rem;
+	color: white;
+	margin-bottom: 6px;
+}
+
+.age-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.age-desc {
+	flex: 1;
+	font-size: 0.9rem;
+	color: #fff;
+	margin: 0;
+	min-width: 0;
+}
+
+.age-btn {
+	border: none;
+	padding: 10px 16px;
+	border-radius: 999px;
+	font-weight: 600;
+	cursor: pointer;
+	color: var(--accent);
+	background: white;
+	white-space: nowrap;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.age-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* DESKTOP */
@@ -55,8 +121,7 @@
 		flex-direction: row;
 	}
 
-	.age-card {
+	.age-card-new {
 		flex: 1;
-		height: 220px;
 	}
 }
