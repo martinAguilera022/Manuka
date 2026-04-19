@@ -10,6 +10,7 @@ import Journey from "./components/ManukaHighlight";
 import QuienesSomos from "./components/QuienesSomos";
 import AgeBoxes from "./components/AgeBoxes";
 import WhatsInside from "./components/WhatsInside"; 
+import Comments from "./components/Comments";
 function App() {
   return (
     <div>
@@ -33,7 +34,7 @@ function App() {
       <AgeBoxes />
       <WhatsInside />
       <Journey />
-
+      <Comments/>
       <CTA />
     </div>
   );

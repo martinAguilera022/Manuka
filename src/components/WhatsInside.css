@@ -1,7 +1,59 @@
+/* CONTENEDOR */
 .inside {
-	padding: 60px 20px;
+	position: relative;
+	padding: 80px 20px;
 	background: #fff;
 	text-align: center;
+	overflow: hidden;
+}
+
+/* 👇 PERSONAJE */
+.inside-character {
+	position: absolute;
+
+	right: 20px;
+	width: 150px;
+	z-index: 10;
+	top: 180px;
+	/* punto de giro arriba (como si estuviera colgado) */
+	transform-origin: top center;
+	filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.3));
+	animation: swingPeek 4s ease-in-out infinite;
+}
+
+/* 🎬 ANIMACIÓN COLGADO + ASOMARSE */
+@keyframes swingPeek {
+	0% {
+		transform: translateY(-70%) rotate(180deg) rotate(0deg);
+	}
+
+	20% {
+		transform: translateY(-30%) rotate(180deg) rotate(8deg);
+	}
+
+	30% {
+		transform: translateY(-10%) rotate(180deg) rotate(-8deg);
+	}
+
+	40% {
+		transform: translateY(-20%) rotate(180deg) rotate(6deg);
+	}
+
+	50% {
+		transform: translateY(-15%) rotate(180deg) rotate(-6deg);
+	}
+
+	60% {
+		transform: translateY(-20%) rotate(180deg) rotate(3deg);
+	}
+
+	80% {
+		transform: translateY(-70%) rotate(180deg) rotate(0deg);
+	}
+
+	100% {
+		transform: translateY(-70%) rotate(180deg) rotate(0deg);
+	}
 }
 
 /* TITULO */

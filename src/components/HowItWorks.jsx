@@ -1,15 +1,17 @@
 import { motion, useMotionValue, animate } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./HowItWorks.css";
 
 function HowItWorks() {
   const x = useMotionValue(0);
+  const containerRef = useRef(null);
   const animationRef = useRef(null);
+  const [width, setWidth] = useState(0);
 
   const steps = [
     {
       clases: "step1",
-      title: "Elegi una suscripción",
+      title: "Elegí una suscripción",
       desc: "Actividades pensadas para su etapa",
       icon: "/img/manuka.png",
     },
@@ -17,7 +19,7 @@ function HowItWorks() {
       clases: "step2",
       title: "Llega su caja",
       desc: "Lista para abrir y empezar",
-      icon: "/img/MOCKUP_CAJA_1_FRENTE.svg",
+      icon: "/img/MOCKUP_CAJA_1_FRENTE.webp",
     },
     {
       clases: "step3",
@@ -34,9 +36,14 @@ function HowItWorks() {
   ];
 
   const start = () => {
-    stop(); // evita duplicar animaciones
+    stop();
 
-    animationRef.current = animate(x, -1000, {
+    if (!containerRef.current) return;
+
+    const newWidth = containerRef.current.scrollWidth / 2;
+    setWidth(newWidth);
+
+    animationRef.current = animate(x, -newWidth, {
       duration: 20,
       ease: "linear",
       repeat: Infinity,
@@ -44,13 +51,12 @@ function HowItWorks() {
   };
 
   const stop = () => {
-    if (animationRef.current) {
-      animationRef.current.stop();
-    }
+    animationRef.current?.stop();
   };
 
   useEffect(() => {
     start();
+
     return () => stop();
   }, []);
 
@@ -63,18 +69,22 @@ function HowItWorks() {
 
         <div className="how-wrapper">
           <motion.div
+            ref={containerRef}
             className="how-steps"
-            style={{ x }} // 👈 clave
+            style={{ x }}
+            drag="x"
+            dragElastic={0.05}
+            dragMomentum={false}
+            dragConstraints={{ left: -width, right: 0 }}
             onMouseEnter={stop}
             onMouseLeave={start}
             onTouchStart={stop}
             onTouchEnd={start}
-            drag="x"
           >
             {[...steps, ...steps].map((step, i) => (
               <div className="how-step" key={i}>
                 <div className="how-icon">
-                  <img  src={step.icon} alt="step" />
+                  <img src={step.icon} alt="step" />
                 </div>
 
                 <div

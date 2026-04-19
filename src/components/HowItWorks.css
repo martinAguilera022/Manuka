@@ -10,7 +10,6 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-
 	padding: 50px 20px;
 }
 
@@ -29,36 +28,24 @@
 	color: white;
 }
 
-/* DECOR */
-.dots {
-	position: relative;
-}
-
-.dots::before {
-	content: "• • •";
-	position: absolute;
-	top: -15px;
-	left: 20%;
-	color: #f7aa20;
-	font-size: 12px;
-}
-
-/* 👉 NUEVO: WRAPPER para carrusel */
+/* WRAPPER (CLAVE) */
 .how-wrapper {
 	overflow: hidden;
+	width: 100%;
 }
 
 /* CARRUSEL */
 .how-steps {
 	display: flex;
 	gap: 30px;
-	width: max-content; /* 👈 clave para animación */
+	width: max-content;
 	padding: 10px 10px 20px;
+	will-change: transform;
 }
 
 /* STEP */
 .how-step {
-	min-width: 160px; /* 👈 FIX importante */
+	min-width: 160px;
 	max-width: 180px;
 	flex-shrink: 0;
 
@@ -67,11 +54,6 @@
 	align-items: center;
 
 	transition: transform 0.3s ease;
-}
-
-/* hover sutil */
-.how-step:hover {
-	transform: translateY(-6px);
 }
 
 /* NUMBER */
@@ -104,6 +86,12 @@
 	margin-bottom: 10px;
 }
 
+.how-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
 /* TEXT */
 .how-step h3 {
 	font-size: 1rem;
@@ -117,11 +105,6 @@
 	color: #ffffff;
 	font-weight: bold;
 	max-width: 200px;
-}
-
-/* SCROLLBAR OFF */
-.how-steps::-webkit-scrollbar {
-	display: none;
 }
 
 /* COLORS */

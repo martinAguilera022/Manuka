@@ -8,11 +8,11 @@ function AgeBoxes() {
       title: "Explorador",
       desc: "Descubrir jugando",
       images: [
-        "/img/MOCKUP_CAJA_1_FRENTE.svg",
-        "/img/MOCKUP_CAJA_1_TRASERA.svg",
-        "/img/MOCKUPCAJA1_SEMIABIERTA1.svg",
-        "/img/MOCKUPCAJA1_COSTADO1.svg",
-        "/img/MOCKUPCAJA1_COSTADO2.svg"
+        "/img/MOCKUP_CAJA_1_FRENTE.webp",
+        "/img/MOCKUP_CAJA_1_TRASERA.webp",
+        "/img/MOCKUPCAJA1_SEMIABIERTA1.webp",
+        "/img/MOCKUPCAJA1_COSTADO1.webp",
+        "/img/MOCKUPCAJA1_COSTADO2.webp"
       
       ],
       color: "#1a99aa",
@@ -22,11 +22,11 @@ function AgeBoxes() {
       title: "Creador",
       desc: "Aprender haciendo",
       images: [
-        "/img/MOCKUP_CAJA_2_FRENTE.svg",
-        "/img/MOCKUP_CAJA_2_TRASERA.svg",
-        "/img/MOCKUPCAJA2_SEMIABIERTA1.svg",
-        "/img/MOCKUPCAJA2_COSTADO1.svg",
-        "/img/MOCKUPCAJA2_COSTADO2.svg"
+        "/img/MOCKUP_CAJA_2_FRENTE.webp",
+        "/img/MOCKUP_CAJA_2_TRASERA.webp",
+        "/img/MOCKUPCAJA2_SEMIABIERTA1.webp",
+        "/img/MOCKUPCAJA2_COSTADO1.webp",
+        "/img/MOCKUPCAJA2_COSTADO2.webp"
 
       ],
       color: "#ec5a41",
@@ -36,11 +36,11 @@ function AgeBoxes() {
       title: "Experto",
       desc: "Desafíos creativos",
       images: [
-        "/img/MOCKUP_CAJA_3_FRENTE.svg",
-        "/img/MOCKUP_CAJA_3_TRASERA.svg",
-        "/img/MOCKUPCAJA3_SEMIABIERTA1.svg",
-        "/img/MOCKUPCAJA3_COSTADO1.svg",
-        "/img/MOCKUPCAJA3_COSTADO2.svg"
+        "/img/MOCKUP_CAJA_3_FRENTE.webp",
+        "/img/MOCKUP_CAJA_3_TRASERA.webp",
+        "/img/MOCKUPCAJA3_SEMIABIERTA1.webp",
+        "/img/MOCKUPCAJA3_COSTADO1.webp",
+        "/img/MOCKUPCAJA3_COSTADO2.webp"
       ],
       color: "#c5b35d",
     },

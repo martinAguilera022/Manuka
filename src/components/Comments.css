@@ -1,0 +1,50 @@
+/* CONTENEDOR */
+.comments {
+	padding: 80px 20px;
+	background: #f9f9f9;
+	text-align: center;
+}
+
+/* TITULO */
+.comments-title {
+	font-size: 1.8rem;
+	font-weight: 900;
+	margin-bottom: 40px;
+}
+
+/* GRID */
+.comments-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	max-width: 900px;
+	margin: auto;
+}
+
+/* CARD */
+.comment-card {
+	background: white;
+	padding: 20px;
+	border-radius: 16px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+	text-align: left;
+	transition: transform 0.2s ease;
+}
+
+.comment-card:hover {
+	transform: translateY(-5px);
+}
+
+/* TEXTO */
+.comment-text {
+	font-size: 0.95rem;
+	margin-bottom: 12px;
+	line-height: 1.4;
+}
+
+/* NOMBRE */
+.comment-name {
+	font-size: 0.85rem;
+	font-weight: bold;
+	color: #555;
+}

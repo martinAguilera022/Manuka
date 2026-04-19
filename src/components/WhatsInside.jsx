@@ -10,6 +10,11 @@ function WhatsInside() {
 
   return (
     <section className="inside">
+      <img
+    src="/img/manukaPiola.png"
+    alt="personaje"
+    className="inside-character"
+  />
       <h2 className="inside-title">¿QUÉ TRAE?</h2>
 
       <ul className="inside-list">
