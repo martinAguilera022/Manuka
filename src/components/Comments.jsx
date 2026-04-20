@@ -27,23 +27,37 @@ const reviews = [
     name: "Sofía",
     username: "Mamá de Tomi",
     body: "A mi hijo le encantó 😍. Estuvo toda la tarde creando y súper concentrado.",
-    img: "https://avatar.vercel.sh/sofia",
+    img: "/img/user-Icon1.png",
     rating: 5,
   },
   {
     name: "Martín",
     username: "Papá de Juli",
     body: "Muy buena calidad, se nota que está pensado para chicos. Lo volvería a comprar.",
-    img: "https://avatar.vercel.sh/martin",
+    img: "/img/user-Icon2.png",
     rating: 4,
   },
   {
     name: "Lucía",
     username: "Mamá de Emma",
     body: "No dejó de jugar en todo el día, y encima desarrolla su creatividad 🙌",
-    img: "https://avatar.vercel.sh/lucia",
+    img: "/img/user-Icon3.png",
     rating: 5,
   },
+  {
+    name: "Luis",
+    username: "Papá de Luisa",
+    body: "Muy buena calidad, se nota que está pensado para chicos. Lo volvería a comprar.",
+    img: "/img/user-Icon4.png",
+    rating: 4,
+  },
+  {
+    name: "Pablo",
+    username: "Papá de Pablo",
+    body: "Muy buena calidad, se nota que está pensado para chicos. Lo volvería a comprar.",
+    img: "/img/user-Icon5.png",
+    rating: 4,
+  }
 ]
 
 const ReviewCard = ({ img, name, username, body, rating }) => {
@@ -54,7 +68,7 @@ const ReviewCard = ({ img, name, username, body, rating }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "relative w-[300px]  testimonials p-8 mx-auto",
+        "relative min-w-[260px] max-w-[320px] w-[80%] sm:w-[280px] md:w-[300px] testimonials p-6 mx-auto flex-shrink-0",
         "shadow-[0_15px_40px_rgba(0,0,0,0.08)]",
         "",
         "text-center",
@@ -96,40 +110,93 @@ const ReviewCard = ({ img, name, username, body, rating }) => {
 }
 
 // 🎞️ Marquee vertical simple
+import { useEffect, useRef, useState } from "react"
+
 function HorizontalMarquee() {
+  const scrollRef = useRef(null)
+  const animationRef = useRef(null)
+
+  const [isInteracting, setIsInteracting] = useState(false)
+
+  // 👉 Auto scroll infinito
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+
+    const speed = 0.5 // 🔥 ajustá velocidad
+
+    const animate = () => {
+      if (!isInteracting) {
+        el.scrollLeft += speed
+
+        // loop infinito suave
+        if (el.scrollLeft >= el.scrollWidth / 2) {
+          el.scrollLeft = 0
+        }
+      }
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
+    animationRef.current = requestAnimationFrame(animate)
+
+    return () => cancelAnimationFrame(animationRef.current)
+  }, [isInteracting])
+
+  // 🖱️ Drag desktop
+  const isDown = useRef(false)
+  const startX = useRef(0)
+  const scrollLeft = useRef(0)
+
+  const handleMouseDown = (e) => {
+    isDown.current = true
+    setIsInteracting(true)
+
+    startX.current = e.pageX - scrollRef.current.offsetLeft
+    scrollLeft.current = scrollRef.current.scrollLeft
+  }
+
+  const handleMouseLeave = () => {
+    isDown.current = false
+    setIsInteracting(false)
+  }
+
+  const handleMouseUp = () => {
+    isDown.current = false
+    setIsInteracting(false)
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDown.current) return
+    e.preventDefault()
+
+    const x = e.pageX - scrollRef.current.offsetLeft
+    const walk = (x - startX.current) * 1.5
+    scrollRef.current.scrollLeft = scrollLeft.current - walk
+  }
+
+  // 📱 Touch mobile
+  const handleTouchStart = () => setIsInteracting(true)
+  const handleTouchEnd = () => setIsInteracting(false)
+
   return (
-    <div className="relative w-full overflow-hidden py-6">
-      
-      {/* TRACK */}
-      <div className="flex track w-max gap-6 animate-scroll-x">
+    <div className="relative  w-full py-6">
+      <div
+        ref={scrollRef}
+        className="flex gap-6 track overflow-x-auto overflow-y-hidden scrollbar-hide px-4 touch-pan-x"
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* 🔁 duplicamos para loop infinito */}
         {[...reviews, ...reviews].map((r, i) => (
           <ReviewCard key={i} {...r} />
         ))}
       </div>
 
-      {/* GRADIENTS LATERALES */}
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white" />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white" />
-
-      {/* ANIMACIÓN */}
-      <style>{`
-        @keyframes scroll-x {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll-x {
-          animation: scroll-x 25s linear infinite;
-        }
-
-        .animate-scroll-x:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+    
     </div>
   )
 }
@@ -141,7 +208,7 @@ function Comments() {
         Lo que dicen las familias 💬
       </h2>
 
-      <div className="w-full max-w-md overflow-y-hidden px-4">
+      <div className="w-full h-full">
         <HorizontalMarquee />
       </div>
     </section>

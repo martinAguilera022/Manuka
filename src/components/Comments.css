@@ -1,8 +1,9 @@
-.testimonials{
-    background-color:white;
-    padding: 20px 44px;
-    border-radius:60px;
+.testimonials {
+	background-color: white;
+	padding: 20px 44px;
+	border-radius: 60px;
 }
-.track{
-    gap:20px; 
+.track {
+	gap: 20px;
+	scrollbar: hide;
 }

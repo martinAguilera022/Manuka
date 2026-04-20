@@ -20,17 +20,17 @@ function App() {
       
       <QuienesSomos/>
       <div className="divider-color">
-  <span style={{ background: "var(--primary)" }} />
-  <span style={{ background: "var(--accent)" }} />
-  <span style={{ background: "var(--secondary)" }} />
-  <span style={{ background: "var(--fun)" }} />
+  <span style={{ background: "var(--color-primary)" }} />
+  <span style={{ background: "var(--color-accent)" }} />
+  <span style={{ background: "var(--color-secondary)" }} />
+  <span style={{ background: "var(--color-error)" }} />
 </div>
       <HowItWorks />
         <div className="divider-color">
-  <span style={{ background: "var(--primary)" }} />
-  <span style={{ background: "var(--accent)" }} />
-  <span style={{ background: "var(--secondary)" }} />
-  <span style={{ background: "var(--error)" }} />
+  <span style={{ background: "var(--color-primary)" }} />
+  <span style={{ background: "var(--color-accent)" }} />
+  <span style={{ background: "var(--color-secondary)" }} />
+  <span style={{ background: "var(--color-error)" }} />
 </div>
       <AgeBoxes />
       <WhatsInside />
