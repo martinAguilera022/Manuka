@@ -8,17 +8,17 @@ function FinalCTA() {
         <p className="final-text">
           No se trata de hacerlo perfecto.
           <br />
-          Se trata de estar ahí mientras sucede.
+          Se trata de compartir el momento.
         </p>
 
         <p className="final-sub">
-          Crear con las manos es volver a conectar.
+          Un kit, una mesa… y algo que van a recordar juntos.
           <br />
-          Con su imaginación, su tiempo… y con vos.
+          Empezá hoy a crear esos momentos.
         </p>
 
         <button className="final-btn">
-          Sumarme a Manuka
+          Quiero mi kit Manuka
         </button>
 
       </div>

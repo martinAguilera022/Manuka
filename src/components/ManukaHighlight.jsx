@@ -35,6 +35,14 @@ function ManukaHighlight() {
       </p>
     </div>
 
+    <div className="card">
+      <img src="/img/motricidad.jpg" alt="" />
+      <h3>Mejoran su motricidad</h3>
+      <p>
+      Estimulan la creatividad y fortalecen la motricidad fina y la coordinación mano-ojo.
+      </p>
+    </div>
+
   </div>
 </section>
   );

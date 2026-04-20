@@ -1,16 +1,17 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
-import Benefits from "./components/Benefits";
+
 
 import CTA from "./components/FinalCTA";
-import Includes from "./components/Includes";
-import Album from "./components/Album";
+
+
 import Journey from "./components/ManukaHighlight";
 import QuienesSomos from "./components/QuienesSomos";
 import AgeBoxes from "./components/AgeBoxes";
 import WhatsInside from "./components/WhatsInside"; 
 import Comments from "./components/Comments";
+import Footer from "./components/Footer";
 function App() {
   return (
     <div>
@@ -36,6 +37,8 @@ function App() {
       <Journey />
       <Comments/>
       <CTA />
+      <Footer />
+      
     </div>
   );
 }
