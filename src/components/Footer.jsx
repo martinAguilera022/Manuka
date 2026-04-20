@@ -1,11 +1,11 @@
 import "./Footer.css";
-
+import LogoNav from "../assets/logo-new.svg?react";
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
 
-        <h3 className="footer-logo">Manuka</h3>
+       <LogoNav className="logo-svg-footer" />
 
         <p className="footer-text">
           Momentos que se crean con las manos… y se quedan para siempre.

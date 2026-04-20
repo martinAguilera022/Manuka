@@ -1,6 +1,7 @@
 import "./FinalCTA.css";
-
+import { useNavigate } from "react-router-dom";
 function FinalCTA() {
+  const navigate = useNavigate();
   return (
     <section className="final-cta">
       <div className="final-content">
@@ -17,7 +18,7 @@ function FinalCTA() {
           Empezá hoy a crear esos momentos.
         </p>
 
-        <button className="final-btn">
+        <button className="final-btn" onClick={() => navigate("/inscripcion")}>
           Quiero mi kit Manuka
         </button>
 

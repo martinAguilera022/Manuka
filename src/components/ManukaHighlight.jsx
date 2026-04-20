@@ -2,49 +2,59 @@ import { motion } from "framer-motion";
 import "./ManukaHighlight.css";
 
 function ManukaHighlight() {
+  const items = [
+    {
+      number: "1",
+      title: "Aprenden creando",
+      text: "Actividades pensadas para cada edad que desarrollan habilidades reales.",
+      color: "#1a99aa",
+    },
+    {
+      number: "2",
+      title: "Momentos en familia",
+      text: "Un espacio para compartir, desconectarse y disfrutar juntos.",
+      color: "#c5b35d",
+    },
+    {
+      number: "3",
+      title: "Ven su progreso",
+      text: "Cada creación queda registrada en su álbum. No es solo jugar, es crecer.",
+      color: "#f7aa20",
+    },
+    {
+      number: "4",
+      title: "Mejoran su motricidad",
+      text: "Estimula y fortalece la motricidad fina y la coordinación mano-ojo.",
+      color: "#ec5a41",
+    },
+  ];
+
   return (
- <section className="manuka-highlight">
-  <h2>Crear cambia algo en ellos</h2>
-  <p className="subtitle">
-    Menos pantallas. Más momentos reales.
-  </p>
+    <section className="manuka-highlight">
+      <h2>Crear cambia algo en ellos</h2>
+      <p className="subtitle">Menos pantallas. Más momentos reales.</p>
 
-  <div className="highlight-grid">
+      <div className="highlight-grid">
+        {items.map((item, i) => (
+          <motion.div
+            key={i}
+            className="card"
+            style={{ backgroundColor: item.color }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+          >
+            <span className="number">{item.number}</span>
 
-    <div className="card">
-      <img src="/img/creando.jpg" alt="" />
-      <h3>Aprenden creando</h3>
-      <p>
-        Actividades pensadas para cada edad que desarrollan habilidades reales.
-      </p>
-    </div>
-
-    <div className="card">
-      <img src="/img/familia.jpg" alt="" />
-      <h3>Momentos en familia</h3>
-      <p>
-        Un espacio para compartir, desconectarse y disfrutar juntos.
-      </p>
-    </div>
-
-    <div className="card">
-      <img src="/img/album.jpg" alt="" />
-      <h3>Ven su progreso</h3>
-      <p>
-        Cada creación queda registrada en su álbum. No es solo jugar, es crecer.
-      </p>
-    </div>
-
-    <div className="card">
-      <img src="/img/motricidad.jpg" alt="" />
-      <h3>Mejoran su motricidad</h3>
-      <p>
-      Estimulan la creatividad y fortalecen la motricidad fina y la coordinación mano-ojo.
-      </p>
-    </div>
-
-  </div>
-</section>
+            <div className="content">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }
 
