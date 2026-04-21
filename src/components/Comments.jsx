@@ -54,7 +54,7 @@ const reviews = [
   {
     name: "Pablo",
     username: "Papá de Pablo",
-    body: "Muy buena calidad, se nota que está pensado para chicos. Lo volvería a comprar.",
+    body: "Muy buena la calidad, se nota que está pensado para chicos. Lo volvería a comprar.",
     img: "/img/user-Icon5.png",
     rating: 4,
   }
