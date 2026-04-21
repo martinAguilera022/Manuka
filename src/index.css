@@ -23,6 +23,9 @@ body {
 	overflow-x: hidden;
 	width: 100%;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	margin: 0;
@@ -43,6 +46,7 @@ img {
 section {
 	padding: 60px 20px;
 }
+
 .divider {
 	border: none;
 	height: 10px;

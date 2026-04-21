@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function FinalCTA() {
   const navigate = useNavigate();
   return (
-    <section className="final-cta">
+    <section id="final-cta" className="final-cta">
       <div className="final-content">
         
         <p className="final-text">

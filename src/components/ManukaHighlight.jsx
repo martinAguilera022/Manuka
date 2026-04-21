@@ -30,7 +30,7 @@ function ManukaHighlight() {
   ];
 
   return (
-    <section className="manuka-highlight">
+    <section id="highlight" className="manuka-highlight">
       <h2>Crear cambia algo en ellos</h2>
       <p className="subtitle">Menos pantallas. Más momentos reales.</p>
 

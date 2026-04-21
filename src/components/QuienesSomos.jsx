@@ -31,7 +31,7 @@ function QuienesSomos() {
       </p>
 
      
-      <button
+      <button id="HowItWorks"
       className="cta"
   onClick={() => {
     document.getElementById("AgeBoxes")?.scrollIntoView({
