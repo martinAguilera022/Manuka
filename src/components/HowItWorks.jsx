@@ -35,15 +35,19 @@ function HowItWorks() {
     },
   ];
 
+  const duplicatedSteps = [...steps, ...steps];
+
   const start = () => {
     stop();
 
     if (!containerRef.current) return;
 
-    const newWidth = containerRef.current.scrollWidth / 2;
-    setWidth(newWidth);
+    const totalWidth = containerRef.current.scrollWidth;
+    const singleWidth = totalWidth / 2;
 
-    animationRef.current = animate(x, -newWidth, {
+    setWidth(singleWidth);
+
+    animationRef.current = animate(x, [0, -singleWidth], {
       duration: 20,
       ease: "linear",
       repeat: Infinity,
@@ -57,7 +61,14 @@ function HowItWorks() {
   useEffect(() => {
     start();
 
-    return () => stop();
+    // 🔥 Recalcula cuando cargan imágenes (clave)
+    const handleLoad = () => start();
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      stop();
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   return (
@@ -81,7 +92,7 @@ function HowItWorks() {
             onTouchStart={stop}
             onTouchEnd={start}
           >
-            {[...steps, ...steps].map((step, i) => (
+            {duplicatedSteps.map((step, i) => (
               <div className="how-step" key={i}>
                 <div className="how-icon">
                   <img src={step.icon} alt="step" />

@@ -28,19 +28,38 @@
 	color: white;
 }
 
-/* WRAPPER (CLAVE) */
+/* WRAPPER */
 .how-wrapper {
 	overflow: hidden;
 	width: 100%;
 }
 
-/* CARRUSEL */
+/* CARRUSEL (CLAVE) */
 .how-steps {
 	display: flex;
 	gap: 30px;
 	width: max-content;
 	padding: 10px 10px 20px;
-	will-change: transform;
+
+	/* 🔥 SCROLL REAL */
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	/* ocultar scrollbar */
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	/* UX */
+	cursor: grab;
+	touch-action: pan-x;
+}
+
+.how-steps::-webkit-scrollbar {
+	display: none;
+}
+
+.how-steps:active {
+	cursor: grabbing;
 }
 
 /* STEP */
@@ -55,7 +74,10 @@
 
 	transition: transform 0.3s ease;
 }
-
+.how-steps {
+	display: flex;
+	width: max-content;
+}
 /* NUMBER */
 .step-number {
 	background: #f7aa20;
