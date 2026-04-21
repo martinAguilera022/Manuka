@@ -30,9 +30,17 @@ function QuienesSomos() {
         En Manuka, tu hijo crea, explora y se convierte en protagonista.
       </p>
 
-      <button className="cta">
-        Explorar más
-      </button>
+     
+      <button
+      className="cta"
+  onClick={() => {
+    document.getElementById("AgeBoxes")?.scrollIntoView({
+      behavior: "smooth"
+    });
+  }}
+>
+ Explorar más
+</button>
 
     </section>
   );

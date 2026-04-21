@@ -116,7 +116,7 @@ function AgeBoxes() {
   };
 
   return (
-    <div className="age">
+    <div id="AgeBoxes" className="age">
       <h2 className="age-title">
         CONOCÉ LOS <br /> KITS POR EDADES
       </h2>

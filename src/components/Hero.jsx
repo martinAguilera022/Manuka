@@ -4,9 +4,10 @@ import img1 from "../assets/manualidades1.jpeg";
 import img2 from "../assets/manualidades2.jpeg";
 import img3 from "../assets/manualidades3.jpeg";
 import img4 from "../assets/manualidades4.jpeg";
-
+import {useNavigate} from "react-router-dom";
 
 function Hero() {
+  const navigate = useNavigate();
   const images = [img1, img2, img3,img4];
 
   const [index, setIndex] = useState(0);
@@ -40,7 +41,7 @@ function Hero() {
       <div className="hero-content">
         <h1>PEQUEÑAS MANOS, GRANDES MENTES</h1>
         <p>En Manuka creemos en ensuciarse las manos, en intentar sin miedo y en crear sin pantallas</p>
-        <button>Conocer mas</button>
+        <button onClick={() => navigate("/inscripcion")}>Unirme al club</button>
       </div>
     </section>
   );

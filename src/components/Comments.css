@@ -6,4 +6,5 @@
 .track {
 	gap: 20px;
 	scrollbar: hide;
+	scrollbar-x:hide;
 }
