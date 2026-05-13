@@ -19,7 +19,7 @@ function HowItWorks() {
       clases: "step2",
       title: "Llega su caja",
       desc: "Lista para abrir y empezar",
-      icon: "/img/MOCKUP_CAJA_1_FRENTE.webp",
+      icon: "/img/Caja-Pasos.PNG",
     },
     {
       clases: "step3",
